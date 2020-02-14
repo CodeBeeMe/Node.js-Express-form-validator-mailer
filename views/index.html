@@ -1,0 +1,112 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!-- import the webpage's client-side javascript file -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.0.min.js"
+      integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+      crossorigin="anonymous"
+      type="text/javascript"
+    ></script>
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        node-express-form-validation
+      </h1>
+    </header>
+
+    <main>
+      <p class="bold">Oh hi,</p>
+
+      <p>You know what to do:</p>
+
+      <form id="contactForm" method="POST" action="/api/form/contact">
+        <input
+          id="name"
+          name="name"
+          type="text"
+          maxlength="100"
+          placeholder="Enter your name"
+        />
+        <div class="read-only">
+          <input id="nameFeedback" value="" readonly />
+        </div>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          maxlength="100"
+          placeholder="Enter your email"
+        />
+        <div class="read-only">
+          <input id="emailFeedback" value="" readonly />
+        </div>
+        <textarea
+          id="message"
+          name="message"
+          rows="8"
+          cols="40"
+          type="text"
+          placeholder="What do you want to chat about?"
+        ></textarea>
+        <div class="read-only">
+          <input id="messageFeedback" value="" readonly />
+          <input id="counter" value="" readonly />
+        </div>
+        <button type="submit" id="submit-dream">Get in touch!</button>
+      </form>
+
+      <div class="status">
+        <h3 id="jsonResult"></h3>
+      </div>
+
+      <section class="dreams">
+        <ul id="dreams"></ul>
+      </section>
+      <section class="review">
+        <h1 id="newMessage">
+          New message
+        </h1>
+        <p id="contactName">          
+        </p>
+        <p id="contactEmail">          
+        </p>
+        <p id="contactMessage">          
+        </p>
+      </section>
+    </main>
+
+    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
